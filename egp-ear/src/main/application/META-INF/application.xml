@@ -1,0 +1,28 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+             http://xmlns.jcp.org/xml/ns/javaee/application_7.xsd"
+             version="7">
+
+    <application-name>EGP Application</application-name>
+    <description>Enterprise Government Portal - Java EE Application</description>
+
+    <!-- EJB Module -->
+    <module>
+        <ejb>egp-core-ejb.jar</ejb>
+    </module>
+
+    <!-- Web Module -->
+    <module>
+        <web>
+            <web-uri>egp-web.war</web-uri>
+            <context-root>/egp</context-root>
+        </web>
+    </module>
+
+    <!-- Libraries -->
+    <library-directory>lib</library-directory>
+</application>
+```
