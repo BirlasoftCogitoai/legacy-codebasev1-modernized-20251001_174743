@@ -1,50 +1,68 @@
-```
-# Legacy EGP Application
+# Modernized Application
 
-A legacy Java EE (J2EE) enterprise application built with EJB 3.x, JSP/Servlets, and JPA. This multi-module Maven project represents a typical enterprise government portal (EGP) system from the mid-2000s era.
+This repository contains the modernized version of the legacy application.
 
-## Architecture
+## Generated Files
 
-- **egp-core-ejb**: Core business logic with EJB 3.x stateless session beans, JPA entities, and DAOs
-- **egp-portal-war**: Web presentation layer with JSP pages and servlets
-- **egp-ear**: Enterprise Archive packaging both WAR and EJB JAR modules
+- `pom.xml`
+- `db/schema.sql`
+- `db/seed.sql`
+- `egp-core-ejb/pom.xml`
+- `egp-core-ejb/src/main/java/com/legacy/egp/dao/CaseDAO.java`
+- `egp-core-ejb/src/main/java/com/legacy/egp/dao/CustomerDAO.java`
+- `egp-core-ejb/src/main/java/com/legacy/egp/dao/NotesDAO.java`
+- `egp-core-ejb/src/main/java/com/legacy/egp/ejb/AuditMDB.java`
+- `egp-core-ejb/src/main/java/com/legacy/egp/ejb/CaseBean.java`
+- `egp-core-ejb/src/main/java/com/legacy/egp/ejb/CaseBeanLocal.java`
+- `egp-core-ejb/src/main/java/com/legacy/egp/ejb/CaseBeanRemote.java`
+- `egp-core-ejb/src/main/java/com/legacy/egp/ejb/CustomerBean.java`
+- `egp-core-ejb/src/main/java/com/legacy/egp/ejb/CustomerBeanLocal.java`
+- `egp-core-ejb/src/main/java/com/legacy/egp/ejb/CustomerBeanRemote.java`
+- `egp-core-ejb/src/main/java/com/legacy/egp/ejb/CustomerBeanRemote.java`
+- `egp-core-ejb/src/main/java/com/legacy/egp/entity/CaseRecord.java`
+- `egp-core-ejb/src/main/java/com/legacy/egp/entity/Customer.java`
+- `egp-core-ejb/src/main/java/com/legacy/egp/entity/Note.java`
+- `egp-core-ejb/src/main/resources/jdbc.properties`
+- `egp-core-ejb/src/main/resources/log4j2.xml`
+- `egp-core-ejb/src/main/resources/META-INF/persistence.xml`
+- `egp-core-ejb/src/main/resources/wsdl/LegacyService.wsdl`
+- `egp-ear/pom.xml`
+- `egp-ear/src/main/application/META-INF/application.xml`
+- `egp-portal-war/pom.xml`
+- `egp-portal-war/src/main/java/com/legacy/egp/web/AuthFilter.java`
+- `egp-portal-war/src/main/java/com/legacy/egp/web/CaseServlet.java`
+- `egp-portal-war/src/main/java/com/legacy/egp/web/LegacySoapClient.java`
+- `egp-portal-war/src/main/java/com/legacy/egp/web/LoginServlet.java`
+- `egp-portal-war/src/main/java/com/legacy/egp/web/DatabaseUtils.java`
+- `egp-portal-war/src/main/java/com/legacy/egp/web/ProfileServlet.java`
+- `egp-portal-war/src/main/webapp/caseDetails.jsp`
+- `egp-portal-war/src/main/webapp/cases.jsp`
+- `egp-portal-war/src/main/webapp/home.jsp`
+- `egp-portal-war/src/main/webapp/login.jsp`
+- `src/main/webapp/notes.jsp`
+- `src/main/webapp/profile.jsp`
+- `src/main/webapp/styles.css`
+- `src/main/webapp/WEB-INF/jboss-web.xml`
+- `src/main/webapp/WEB-INF/web.xml`
+- `egp-portal-war/src/main/webapp/WEB-INF/weblogic.xml`
+- `egp-portal-war/src/main/webapp/admin/audit.jsp`
+- `egp-portal-war/src/main/webapp/admin/users.jsp`
+- `scripts/build.sh`
+- `scripts/deploy.sh`
 
-## Modernization Strategy
+## Overview
 
-This project will be modernized to adopt the latest best practices and technologies such as Spring Boot, RESTful APIs, and modern front-end frameworks. 
+This code was automatically modernized using AI-powered code modernization based on:
+- Legacy code repository analysis
+- Discovery phase findings
+- Migration plan recommendations
+- Architecture advisory guidelines
 
-### Key Changes
+## Next Steps
 
-- Migration from EJB to Spring Boot
-- Replace JSP/Servlets with modern front-end frameworks (e.g., React, Angular)
-- Use modern ORM (e.g., Hibernate) with JPA
-- Improve security with modern authentication and authorization mechanisms
-- Implement comprehensive logging and error handling
+1. Review the generated code
+2. Run tests
+3. Deploy to staging environment
+4. Monitor and optimize
 
-## Getting Started
-
-To build and run the project:
-
-1. Ensure you have JDK 11 or higher installed.
-2. Install Maven 3.6 or higher.
-3. Clone the repository.
-4. Navigate to the project directory.
-5. Use the following commands to build and run the application:
-
-```sh
-mvn clean install
-mvn spring-boot:run
-```
-
-## Documentation
-
-Detailed documentation can be found in the `docs` directory.
-
-## Contributing
-
-Contributions are welcome! Please see the `CONTRIBUTING.md` file for guidelines on how to contribute to this project.
-
-## License
-
-This project is licensed under the MIT License - see the `LICENSE` file for details.
-```
+Generated on: 2025-10-01 17:47:43
