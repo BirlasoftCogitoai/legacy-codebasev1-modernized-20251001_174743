@@ -1,0 +1,63 @@
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://legacy.egp.com/services"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             targetNamespace="http://legacy.egp.com/services"
+             elementFormDefault="qualified">
+
+    <!-- Modern SOAP Web Service Definition for EGP External Integration -->
+    <types>
+        <xsd:schema targetNamespace="http://legacy.egp.com/services">
+            <xsd:element name="LegacyRequest" type="tns:LegacyRequestType"/>
+            <xsd:element name="LegacyResponse" type="tns:LegacyResponseType"/>
+            <xsd:complexType name="LegacyRequestType">
+                <xsd:sequence>
+                    <xsd:element name="param1" type="xsd:string"/>
+                    <xsd:element name="param2" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="LegacyResponseType">
+                <xsd:sequence>
+                    <xsd:element name="result" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </types>
+
+    <message name="LegacyRequestMessage">
+        <part name="parameters" element="tns:LegacyRequest"/>
+    </message>
+
+    <message name="LegacyResponseMessage">
+        <part name="parameters" element="tns:LegacyResponse"/>
+    </message>
+
+    <portType name="LegacyServicePortType">
+        <operation name="LegacyOperation">
+            <input message="tns:LegacyRequestMessage"/>
+            <output message="tns:LegacyResponseMessage"/>
+        </operation>
+    </portType>
+
+    <binding name="LegacyServiceBinding" type="tns:LegacyServicePortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <operation name="LegacyOperation">
+            <soap:operation soapAction="http://legacy.egp.com/services/LegacyOperation"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+
+    <service name="LegacyService">
+        <port name="LegacyServicePort" binding="tns:LegacyServiceBinding">
+            <soap:address location="http://legacy.egp.com/services/LegacyService"/>
+        </port>
+    </service>
+</definitions>
+```
